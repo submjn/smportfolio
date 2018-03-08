@@ -28,6 +28,7 @@ module.exports = {
     */
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
+        config.resolve.alias['vue'] = 'vue/dist/vue.common'
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
